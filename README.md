@@ -8,7 +8,7 @@ FTP and Telnet send credentials in plain text over the network. This tool demons
 
 ## Status
 
-**Work in progress.** Current version captures and prints raw payloads from TCP traffic on ports 21/23. Credential extraction, password obfuscation, and entropy scoring are planned next steps.
+**Work in progress.** Current version extracts and labels FTP and Telnet credentials from captured traffic. Telnet username output may still contain terminal negotiation noise (see roadmap). Password obfuscation and entropy scoring are planned next steps.
 
 ## Requirements
 
@@ -44,8 +44,8 @@ Tested against [Metasploitable2](https://sourceforge.net/projects/metasploitable
 ## Roadmap
 
 - [x] Basic packet capture on ports 21/23
-- [ ] Extract FTP username/password from `USER`/`PASS` commands
-- [ ] Reassemble and parse Telnet character-by-character stream
+- [x] Extract FTP username/password from `USER`/`PASS` commands
+- [x] Reassemble and parse Telnet character-by-character stream
 - [ ] Obfuscate captured passwords in terminal output
 - [ ] Calculate and classify password entropy
 
